@@ -13,3 +13,9 @@ function addNewBook(title, author, pages, read) {
     console.log('Book added successfully');
     return library.push(book);
 }
+
+function read(array) {
+    for (book in array ) {
+        console.log(array[book])
+    }
+}
