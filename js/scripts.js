@@ -14,8 +14,37 @@ function addNewBook(title, author, pages, read) {
     return library.push(book);
 }
 
-function read(array) {
-    for (book in array ) {
-        console.log(array[book])
+const booksTable = document.querySelector(".books-table");
+
+function displayBooks() {
+
+    while (booksTable.rows.length > 1) {
+        booksTable.deleteRow(1);
     }
+
+    library.forEach(book => {
+        const row = document.createElement('tr');
+
+        const titleCell = document.createElement('td');
+        titleCell.textContent = book.title;
+        row.appendChild(titleCell);
+
+        const authorCell = document.createElement('td');
+        authorCell.textContent = book.author;
+        row.appendChild(authorCell);
+
+        const pagesCell = document.createElement('td');
+        pagesCell.textContent = book.pages;
+        row.appendChild(pagesCell);
+
+        const readCell = document.createElement('td');
+        readCell.textContent = book.read;
+        row.appendChild(readCell);
+
+        const idCell = document.createElement('td');
+        idCell.textContent = book.id;
+        row.appendChild(idCell);
+
+        booksTable.appendChild(row);
+    })
 }
