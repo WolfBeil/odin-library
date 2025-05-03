@@ -18,6 +18,34 @@
                 <th>ID</th>
             </tr>
         </table>
+        <div>
+            <dialog id="newBookDialog">
+                <form method="dialog" id="newBookDialog">
+                    <legend>Add New Book</legend>
+                    <div>
+                        <label for="title">Book Title:</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    <div>
+                        <label for="author">Book Author:</label>
+                        <input type="text" name="author" id="author" required>
+                    </div>
+                    <div>
+                        <label for="pages">Number of Pages:</label>
+                        <input type="number" name="pages" id="pages">
+                    </div>
+                    <div>
+                        <label for="read">Have you read it?:</label>
+                        <select name="read" id="read">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <button type="submit">Add Book</button>
+                    <button type="button" id="cancelBtn">Cancel</button>
+                </form>
+            </dialog>
+        </div>
     </div>
     <script src="js/scripts.js"></script>
 </body>
