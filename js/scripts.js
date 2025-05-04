@@ -49,6 +49,13 @@ function displayBooks() {
         idCell.textContent = book.id;
         row.appendChild(idCell);
 
+        const toggleReadCell = document.createElement('td')
+        const toggleReadBtn = document.createElement('button');
+        toggleReadBtn.textContent = 'Toggle Read';
+        toggleReadBtn.setAttribute('data-book-id', book.id);
+        toggleReadCell.appendChild(toggleReadBtn);
+        row.appendChild(toggleReadCell);
+
         const removeCell = document.createElement('td');
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Remove';
@@ -60,7 +67,11 @@ function displayBooks() {
     })
 }
 
-// Remove button funtionality
+// Toggle Read button functionality
+
+
+
+// Remove button functionality
 
 function removeBook(bookId) {
     library = library.filter(book => book.id != bookId);
