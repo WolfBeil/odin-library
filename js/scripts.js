@@ -68,6 +68,11 @@ booksTable.addEventListener('click', (event) => {
     }
 })
 
+function removeBook(bookId) {
+    library = library.filter(book => book.id != bookId);
+    displayBooks();
+}
+
 // Dialog modal functionality
 
 const addBookBtn = document.querySelector('#addBookBtn');
