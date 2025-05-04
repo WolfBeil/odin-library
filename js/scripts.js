@@ -1,3 +1,5 @@
+// Library array for Books and Books object constructor
+
 let library = [];
 
 function Book(title, author, pages, read) {
@@ -13,6 +15,8 @@ function addNewBook(title, author, pages, read) {
     console.log('Book added successfully');
     return library.push(book);
 }
+
+// Books display function
 
 const booksTable = document.querySelector(".books-table");
 
@@ -48,3 +52,35 @@ function displayBooks() {
         booksTable.appendChild(row);
     })
 }
+
+// Dialog modal functionality
+
+const addBookBtn = document.querySelector('#addBookBtn');
+const newBookDialog = document.querySelector('#newBookDialog');
+const bookForm = document.querySelector('#bookForm');
+const cancelBtn = document.querySelector('#cancelBtn');
+
+addBookBtn.addEventListener('click', () => {
+    newBookDialog.showModal();
+})
+
+cancelBtn.addEventListener('click', () => {
+    newBookDialog.close();
+    bookForm.reset();
+})
+
+bookForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const title = document.querySelector('#title').value;
+    const author = document.querySelector('#author').value;
+    const pages = document.querySelector('#pages').value;
+    const read = document.querySelector('#read').value;
+
+    addNewBook(title, author, pages, read);
+    displayBooks();
+
+    newBookDialog.close();
+    bookForm.reset();
+})
+
