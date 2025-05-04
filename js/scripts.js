@@ -62,16 +62,17 @@ function displayBooks() {
 
 // Remove button funtionality
 
-booksTable.addEventListener('click', (event) => {
-    if (event.target.textContent === 'Remove' && event.target.tagName === 'BUTTON') {
-        
-    }
-})
-
 function removeBook(bookId) {
     library = library.filter(book => book.id != bookId);
     displayBooks();
 }
+
+booksTable.addEventListener('click', (event) => {
+    if (event.target.textContent === 'Remove' && event.target.tagName === 'BUTTON') {
+        dataValue = event.target.getAttribute('data-book-id');
+        removeBook(dataValue);
+    }
+})
 
 // Dialog modal functionality
 
