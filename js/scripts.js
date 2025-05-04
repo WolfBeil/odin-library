@@ -49,6 +49,13 @@ function displayBooks() {
         idCell.textContent = book.id;
         row.appendChild(idCell);
 
+        const removeCell = document.createElement('td');
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Remove';
+        deleteBtn.setAttribute('data-book-id', book.id);
+        removeCell.appendChild(deleteBtn);
+        row.appendChild(removeCell);
+
         booksTable.appendChild(row);
     })
 }
