@@ -60,6 +60,14 @@ function displayBooks() {
     })
 }
 
+// Remove button funtionality
+
+booksTable.addEventListener('click', (event) => {
+    if (event.target.textContent === 'Remove' && event.target.tagName === 'BUTTON') {
+        
+    }
+})
+
 // Dialog modal functionality
 
 const addBookBtn = document.querySelector('#addBookBtn');
