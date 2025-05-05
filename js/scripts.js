@@ -67,9 +67,25 @@ function displayBooks() {
     })
 }
 
+// Prototype method for toggling read status
+
+Book.prototype.toggleReadStatus = function () {
+    if (this.read === 'Yes') {
+        this.read = 'No';
+    } else {
+        this.read = 'Yes';
+    }
+}
+
 // Toggle Read button functionality
 
-
+function toggleRead(bookId) {
+    let book = library.find((book) => book.id === bookId);
+    if (book) {
+        book.toggleReadStatus();
+        displayBooks();
+    }
+}
 
 // Remove button functionality
 
@@ -78,10 +94,15 @@ function removeBook(bookId) {
     displayBooks();
 }
 
+// booksTable event listener delegation
+
 booksTable.addEventListener('click', (event) => {
     if (event.target.textContent === 'Remove' && event.target.tagName === 'BUTTON') {
         dataValue = event.target.getAttribute('data-book-id');
         removeBook(dataValue);
+    } else if (event.target.textContent === 'Toggle Read' && event.target.tagName === 'BUTTON') {
+        dataValue = event.target.getAttribute('data-book-id');
+        toggleRead(dataValue);
     }
 })
 
