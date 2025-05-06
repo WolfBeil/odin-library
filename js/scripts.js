@@ -53,6 +53,7 @@ function displayBooks() {
         const toggleReadBtn = document.createElement('button');
         toggleReadBtn.textContent = 'Toggle Read';
         toggleReadBtn.setAttribute('data-book-id', book.id);
+        toggleReadBtn.classList.add('toggleReadBtnClass');
         toggleReadCell.appendChild(toggleReadBtn);
         row.appendChild(toggleReadCell);
 
@@ -60,6 +61,7 @@ function displayBooks() {
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Remove';
         deleteBtn.setAttribute('data-book-id', book.id);
+        deleteBtn.classList.add('removeBtnClass');
         removeCell.appendChild(deleteBtn);
         row.appendChild(removeCell);
 

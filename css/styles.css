@@ -113,6 +113,48 @@ td {
   color: var(--coal);
 }
 
+.books-table td:nth-child(1) {
+  font-weight: bold;
+}
+
+/* Styles for buttons inside the table */
+
+.books-table button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+  margin: 0.25rem;
+  font-weight: bold;
+}
+
+.books-table button:hover {
+  opacity: 0.8;
+}
+
+.removeBtnClass {
+  background-color: var(--blood);
+  color: var(--lightgray);
+}
+
+.removeBtnClass:hover {
+  background-color: var(--crimson);
+}
+
+
+.toggleReadBtnClass {
+  background-color: var(--gravel);
+  color: var(--coal);
+  border: 1px solid var(--gravel);
+}
+
+.toggleReadBtnClass:hover {
+  background-color: var(--gray);
+  border-color: var(--gray);
+}
+
 #addBookBtn {
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
